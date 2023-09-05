@@ -1,0 +1,9 @@
+*.o
+.vscode
+.env
+.DS_Store
+obj/
+test/
+ircserv
+*.dSYM*
+bot

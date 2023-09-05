@@ -1,0 +1,4 @@
+// can variable must be set like <variable>=<value>
+hostname=127.0.0.1
+name=operator
+password=1234
