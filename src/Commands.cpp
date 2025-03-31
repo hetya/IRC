@@ -38,12 +38,13 @@ int user(Client &  client, std::vector<std::string> args)
 {
     if (!client.is_pass())
         return (0);
-    if ( client.is_register()) {
+    if ( client.is_register())
+    {
         return (client.send_code(ERR_ALREADYREGISTERED));
     }
     if (args.size() < 2)
         return (client.send_code(ERR_NEEDMOREPARAMS , args[0]));
-	if (client.set_username(args) == 0)
+    if (client.set_username(args) == 0)
 		client.registerFlag(REG_USER_F);
     if (client.is_register())
         client.registration();

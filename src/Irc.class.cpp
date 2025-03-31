@@ -16,7 +16,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Irc::Irc(char const *port, char const *password) : _port(std::atoi(port)), _password(password), _hostname(initialize_hostname()),_start_time(time(NULL)) {
+Irc::Irc(char const *password) : _password(password), _hostname(initialize_hostname()),_start_time(time(NULL)) {
 	_channels.reserve(MAX_CHANNEL);
 	setCommands(commands);
 	setUnregisteredCommands(unregisteredCommands);
@@ -217,9 +217,9 @@ std::vector<std::string>	Irc::get_operLogin(void)
 }
 
 Client	*Irc::getClient(std::string nick) {
-    if (std::find(_clients.begin(), _clients.end(), nick) != _clients.end())
-        return &*std::find(_clients.begin(), _clients.end() , nick);
-    return nullptr;
+    if (findContainer(_clients.begin(), _clients.end(), nick) != _clients.end())
+        return &*findContainer(_clients.begin(), _clients.end() , nick);
+    return NULL;
 }
 
 int	Irc::get_serverStat(void)

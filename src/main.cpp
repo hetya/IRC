@@ -29,7 +29,7 @@ int    main(int argc, char *argv[])
     if (!check_args(argv[1], argv[2])) {
         return (1);
     }
-    Irc    irc(argv[1], argv[2]);
+    Irc    irc(argv[2]);
     if (irc.parse_file() != 0)
     {
         std::cerr << "Error: while parsing IRCd file" << std::endl;

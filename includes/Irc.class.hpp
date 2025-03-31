@@ -40,7 +40,6 @@ typedef int (*CommandFunction)( Client & , std::vector<std::string> );
 class Irc
 {
 private:
-	int const					_port;
 	std::string const			_password;
 	std::string	const			_hostname;
 	time_t	const				_start_time;
@@ -51,7 +50,7 @@ private:
 public:
 	std::map<std::string , CommandFunction> commands;
 	std::map<std::string , CommandFunction> unregisteredCommands;
-	Irc(char const *port, char const *password);
+	Irc(char const *password);
 	~Irc();
 
 	const std::string			initialize_hostname(void);

@@ -42,9 +42,6 @@ endif
 CC				= c++
 
 FLAGS			= -std=c++98 -I./$(INCLUDES_PATH)
-ifeq ($(OS_NAME), Linux)
-	FLAGS			+= -I/usr/include -L /usr/lib -L/usr/local/lib -I/usr/local/include
-endif
 FLAGS			+= -Wall -Wextra -Werror -Wshadow -Wno-shadow
 #  FLAGS			+= -fsanitize=address -g3
 FLAGS			+= -g3

@@ -154,7 +154,7 @@ void Channel::setModeFromString( Irc & irc , std::string modes , std::vector<std
 		if ((int)args.size() >= argStatus + 1 && isNumber(args[argStatus]))
 		{
 			_Flags = _Flags | CLIENT_LIMIT_F;
-			setMaxSize(stoi(args[argStatus]));
+			setMaxSize(atoi(args[argStatus].c_str()));
 			argStatus++;
 		}
 	}
